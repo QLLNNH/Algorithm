@@ -37,7 +37,8 @@ function Insertion(compare_fn) {
 Insertion.prototype.sort = function (arr) {
     const N = arr.length;
     for (let i = 1; i < N; i += 1) {
-        for (let j = i; j > 0 && this.less(arr[j], arr[j - 1]); j -= 1) {
+        const v = arr[i];
+        for (let j = i; j > 0 && this.less(v, arr[j - 1]); j -= 1) {
             this.exch(arr, j, j - 1);
         }
     }
