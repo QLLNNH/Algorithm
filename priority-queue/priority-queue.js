@@ -11,6 +11,10 @@ PriorityQueue.prototype.size = function () {
     return this.N;
 }
 
+PriorityQueue.prototype.isEmpty = function () {
+    return this.N === 0;
+}
+
 PriorityQueue.prototype.less = function (a, b) {
     return a < b;
 }
