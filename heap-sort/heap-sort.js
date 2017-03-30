@@ -3,12 +3,12 @@
 /**
  * 二叉堆排序
  */
-function Heapsort(compare_fn) {
+function HeapSort(compare_fn) {
     if (typeof compare_fn === 'function')
         this.less = compare_fn;
 }
 
-Heapsort.prototype.sort = function (arr) {
+HeapSort.prototype.sort = function (arr) {
     let N = arr.length;
     arr.unshift(arr[0]);
     for (let k = Math.floor(N / 2); k >= 1; k -= 1) {
@@ -22,7 +22,7 @@ Heapsort.prototype.sort = function (arr) {
     return arr;
 }
 
-Heapsort.prototype.sink = function (arr, k, N) {
+HeapSort.prototype.sink = function (arr, k, N) {
     while (2 * k <= N) {
         let j = 2 * k;
         if (j < N && this.less(arr[j + 1], arr[j])) {
@@ -34,14 +34,14 @@ Heapsort.prototype.sink = function (arr, k, N) {
     }
 }
 
-Heapsort.prototype.less = function (a, b) {
+HeapSort.prototype.less = function (a, b) {
     return a < b;
 }
 
-Heapsort.prototype.exec = function (arr, a, b) {
+HeapSort.prototype.exec = function (arr, a, b) {
     const t = arr[a];
     arr[a] = arr[b];
     arr[b] = t;
 }
 
-module.exports = Heapsort;
+module.exports = HeapSort;
