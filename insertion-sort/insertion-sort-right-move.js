@@ -18,7 +18,7 @@
  *  比较：N - 1
  *  交换：0
  */
-function Insertion(compare_fn) {
+function InsertionSort(compare_fn) {
     if (typeof compare_fn === 'function')
         this.less = compare_fn;
 }
@@ -34,7 +34,7 @@ function Insertion(compare_fn) {
  *  如果满足this.less(v, arr[j])时，将比较大的元素右移一个位置，并将empty等于j。
  *  否则终止内循环，并且使移动造成的空位索引（empty）的元素等于内循环开始的元素。
  */
-Insertion.prototype.sort = function (arr) {
+InsertionSort.prototype.sort = function (arr) {
     const N = arr.length;
     for (let i = 1; i < N; i += 1) {
         let empty = i, v = arr[i];
@@ -47,12 +47,12 @@ Insertion.prototype.sort = function (arr) {
     return arr;
 }
 
-Insertion.prototype.less = function (a, b) {
+InsertionSort.prototype.less = function (a, b) {
     return a < b;
 }
 
-Insertion.prototype.rightMove = function (arr, low) {
+InsertionSort.prototype.rightMove = function (arr, low) {
     arr[low + 1] = arr[low];
 }
 
-module.exports = Insertion;
+module.exports = InsertionSort;

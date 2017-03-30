@@ -18,7 +18,7 @@
  *  比较：N - 1
  *  交换：0
  */
-function Insertion(compare_fn) {
+function InsertionSort(compare_fn) {
     if (typeof compare_fn === 'function')
         this.less = compare_fn;
 }
@@ -34,7 +34,7 @@ function Insertion(compare_fn) {
  *  否则终止内循环，因为插入排序中，j左侧的元素是有序的。
  *
  */
-Insertion.prototype.sort = function (arr) {
+InsertionSort.prototype.sort = function (arr) {
     const N = arr.length;
     for (let i = 1; i < N; i += 1) {
         const v = arr[i];
@@ -45,14 +45,14 @@ Insertion.prototype.sort = function (arr) {
     return arr;
 }
 
-Insertion.prototype.less = function (a, b) {
+InsertionSort.prototype.less = function (a, b) {
     return a < b;
 }
 
-Insertion.prototype.exch = function (arr, i, j) {
+InsertionSort.prototype.exch = function (arr, i, j) {
     const t = arr[i];
     arr[i] = arr[j];
     arr[j] = t;
 }
 
-module.exports = Insertion;
+module.exports = InsertionSort;
