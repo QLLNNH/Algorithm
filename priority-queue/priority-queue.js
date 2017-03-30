@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * 基于完美二叉堆的优先队列
+ */
 function PriorityQueue(compare_fn) {
     if (typeof compare_fn === 'function')
         this.less = compare_fn;
