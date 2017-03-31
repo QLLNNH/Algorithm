@@ -3,12 +3,12 @@
 /**
  * 希尔排序
  */
-function Shell(compare_fn) {
+function ShellSort(compare_fn) {
     if (typeof compare_fn === 'function')
         this.less = compare_fn;
 }
 
-Shell.prototype.sort = function (arr) {
+ShellSort.prototype.sort = function (arr) {
     const N = arr.length;
     let h = 1;
     while (h < N / 3) h = 3 * h + 1;
@@ -23,14 +23,14 @@ Shell.prototype.sort = function (arr) {
     return arr;
 }
 
-Shell.prototype.less = function (a, b) {
+ShellSort.prototype.less = function (a, b) {
     return a < b;
 }
 
-Shell.prototype.exch = function (arr, i, j) {
+ShellSort.prototype.exch = function (arr, i, j) {
     const t = arr[i];
     arr[i] = arr[j];
     arr[j] = t;
 }
 
-module.exports = Shell;
+module.exports = ShellSort;
