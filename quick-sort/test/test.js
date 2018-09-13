@@ -1,9 +1,9 @@
 'use strict';
-const QuickSort = require('../quick-sort-optimizing');
+const QuickSort = require('../quick-sort-median');
 
 const quickSort = new QuickSort((a, b) => {
     if (a - b < 0) return true;
 });
-const arr = [2, 3, 4, 8, 1, 2, 4, 6, 0, 9, 7, 12, 31, 53, 43, 9, 4, 2, 3, 7, 8, 1, 5, 6];
+const arr = [6, 3, 41, 3, 65, 12, 33, 16, 21, 37, 4, 50, 71, 312, 1, 2, 5, 7, 32, 23];
 const ret = quickSort.sort(arr);
 console.log(ret);

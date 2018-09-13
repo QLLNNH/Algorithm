@@ -11,7 +11,7 @@ QuickSort.prototype.sort = function (arr) {
 }
 
 QuickSort.prototype._sort = function (arr, lo, hi) {
-    if (lo + 3 >= hi) {
+    if (lo + 10 >= hi) {
         this.insertion(arr, lo, hi + 1);
         return;
     }

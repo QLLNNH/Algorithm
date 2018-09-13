@@ -20,6 +20,7 @@ QuickSort.prototype._sort = function (arr, lo, hi) {
 QuickSort.prototype.partition = function (arr, lo, hi) {
     let i = lo - 1;
     let j = hi;
+    this.shuffle(arr, lo, hi);
     const v = arr[hi];
     while (true) {
         while (this.less(arr[++ i], v)) ;
@@ -29,6 +30,16 @@ QuickSort.prototype.partition = function (arr, lo, hi) {
     }
     this.exch(arr, hi, i);
     return i;
+}
+
+QuickSort.prototype.shuffle = function (arr, lo, hi) {
+    const med = Math.floor((hi - lo) / 2);
+    if (arr[lo] <= arr[med] <= arr[hi] || arr[hi] <= arr[med] <= arr[lo]) {
+        this.exch(arr, med, hi);
+    }
+    else if (arr[hi] <= arr[lo] <= arr[med] || arr[med] <= arr[lo] <= arr[hi]) {
+        this.exch(arr, lo, hi);
+    }
 }
 
 QuickSort.prototype.less = function (a, b) {
